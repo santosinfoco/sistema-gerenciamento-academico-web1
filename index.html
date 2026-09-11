@@ -6,35 +6,53 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Dashboard</title>
 </head>
+
 <body>
-<header>
-    <h1>SISTEMA DE GERENCIAMENTO ACADÊMICO</h1>
+  <header>
+      <h1>SISTEMA DE GERENCIAMENTO ACADÊMICO</h1>
+  </header>
+
            <nav>
                 <ul>
                     <li><a href="index.html">Dashboard</a></li>
                     <li><a href="alunos.html">Alunos</a></li>
                     <li><a href="cursos.html">Cursos</a></li>
-                    <li><a href="matriculas.html">Matriculas</a></li>
+                    <li><a href="matriculas.html">Matrículas</a></li>
                     <li><a href="usuarios.html">Usuários</a></li>
                 </ul>
             </nav>
-</header>
+
 <main>
-    <section>
+    <section id="Dashboard">
         <h2>DASHBOARD</h2>
-        Alunos: 245<br>
-        Cursos: 8<br>
-        Matrículas: 210<br>
-        Usuários: 5<br>
+        <article class="card">
+          <h3>Alunos</h3>
+          <p>245</p>
+        </article>
+        <article class="card">
+          <h3>Cursos</h3>
+          <p>8</p>
+        </article>
+
+        <article class="card">
+          <h3>Matrículas</h3>
+          <p>210</p>
+        </article>
+
+        <article class="card">
+          <h3>Usuários</h3>
+          <p>5</p>
+        </article>
+
     </section>
-    <section>
-        <h2>AVISOS</h2>
-        Matrículas abertas até sexta-feira<br>
-    </section>
+
+    <aside class="aviso">
+       <h2>Avisos</h2>
+       <p>Matrículas abertas até sexta-feira.</p>
+    </aside>
 </main>
 
 <footer>
-    <br>
     <p>© 2026 Sistema de Gerenciamento Acadêmico. Todos os direitos reservados.</p>
 </footer>
 

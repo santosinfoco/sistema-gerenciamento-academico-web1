@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Cadastro de Matrícula - Sistema Acadêmico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cadastro de Matrícula - Sistema Acadêmico</title>
 </head>
 <body>
-    <header>
+  <header>
     <h1>Sistema de Gerenciamento Acadêmico</h1>
-    </header>
+  </header>
 
-       <nav>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="alunos.html">Alunos</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="matrículas.html">Matriculas</a></li>
-                <li><a href="usuários.html">Usuários</a></li>
-            </ul>
-        </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="alunos.html">Alunos</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+      <li><a href="matrículas.html">Matriculas</a></li>
+      <li><a href="usuários.html">Usuários</a></li>
+    </ul>
+  </nav>
 
-<main>
+  <main>
     <section>
-        <h2>Cadastro de Matrícula</h2>
+      <h2>Cadastro de Matrícula</h2>
 
-        <form>
-            <fieldset>
-                <legend>Dados da Matrícula</legend>
+      <form>
+        <fieldset>
+          <legend>Dados da Matrícula</legend>
 
-                <label for="aluno">Aluno</label>
-                <select id="aluno" name="aluno" required>
-                   <option value="">Selecione um aluno</option>
-                   <option value="1">Ana Souza</option>
-                   <option value="2">Carlos Silva</option>
-                   <option value="3">Mariany Santos</option>
-                </select>
+          <label for="aluno">Aluno</label>
+          <select id="aluno" name="aluno" required>
+            <option value="">Selecione um aluno</option>
+            <option value="1">Ana Souza</option>
+            <option value="2">Carlos Silva</option>
+            <option value="3">Mariany Santos</option>
+          </select>
 
-                <label for="curso">Curso</label>
-                <select id="curso" name="curso" required>
-                   <option value="">Selecione um curso</option>
-                   <option value="ads">Análise e Desenvolvimento de Sistemas</option>
-                   <option value="cc">Ciência da Computação</option>
-                   <option value="es">Engenharia de Software</option>
-                </select>
+          <label for="curso">Curso</label>
+          <select id="curso" name="curso" required>
+            <option value="">Selecione um curso</option>
+            <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+            <option value="cc">Ciência da Computação</option>
+            <option value="es">Engenharia de Software</option>
+          </select>
 
-                <label for="date">Data da matrícula</label>
-                <input type="date" id="date" name="date" required>
+          <label for="date">Data da matrícula</label>
+          <input type="date" id="date" name="date" required>
 
-                <label for="Semestre">Semestre de Ingresso</label>
-                <input type="text" id="Semestre" name="Semestre" required>
+          <label for="Semestre">Semestre de Ingresso</label>
+          <input type="text" id="Semestre" name="Semestre" required>
 
-                <label for="Matricula">Número da Matrícula</label>
-                <input type="text" id="Matricula" name="Matricula" required>
+          <label for="Matricula">Número da Matrícula</label>
+          <input type="text" id="Matricula" name="Matricula" required>
 
-                <label for="status">Status</label>
-                <select id="status" name="status" required>
-                   <option value="">Selecione</option>
-                   <option value="ativa">Ativa</option>
-                   <option value="trancada">Trancada</option>
-                   <option value="cancelada">Cancelada</option>
-                   <option value="concluida">Concluída</option>
-                </select>
-            </fieldset>
-
-            <button type="submit">Salvar</button>
-            <button type="reset" class="botao-secundario">Limpar</button>
-        </form>
-        <p><a href="matriculas.html">Voltar para Matrículas</a></p>
+          <label for="status">Status</label>
+          <select id="status" name="status" required>
+            <option value="">Selecione</option>
+            <option value="ativa">Ativa</option>
+            <option value="trancada">Trancada</option>
+            <option value="cancelada">Cancelada</option>
+            <option value="concluida">Concluída</option>
+          </select>
+        </fieldset>
+        
+        <button type="submit">Salvar</button>
+        <button type="reset" class="botao-secundario">Limpar</button>
+      </form>
+      <p><a href="matriculas.html">Voltar para Matrículas</a></p>
     </section>
-</main>
+  </main>
 
-<footer>
+  <footer>
     <p>© 2026 Sistema de Gerenciamento Acadêmico. Todos os direitos reservados.</p>
-</footer>
+  </footer>
 </body>
 </html>

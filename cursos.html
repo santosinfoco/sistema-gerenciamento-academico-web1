@@ -1,44 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cursos | Sistema Acadêmico</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="cabecalho">
-      <div>
-        <h1 id="titulo-sistema">Sistema de Gerenciamento Acadêmico</h1>
-        <p class="subtitulo">Desenvolvimento Web 1 — Aula 10</p>
-      </div>
-      <span class="area-academica">Área Acadêmica</span>
-    </header>
-    <nav class="navegacao" aria-label="Navegação principal">
-      <ul class="menu">
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a id="link-alunos" href="alunos.html">Alunos</a></li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="matriculas.html">Matrículas</a></li>
-        <li><a href="usuarios.html">Usuários</a></li>
-      </ul>
-    </nav>
-    <main>
-      <section>
-        <div class="secao-cabecalho">
-          <div>
-            <h2>Cursos</h2>
-            <p>Renderização dinâmica de cursos com DOM.</p>
-          </div>
-          <a class="botao-link" href="curso-form.html">Novo curso</a>
-        </div>
-        <div id="lista-cursos" class="lista-grid"></div>
-      </section>
-    </main>
-    <footer class="rodape">
-      <p>Sistema de Gerenciamento Acadêmico — Projeto Integrador</p>
-    </footer>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos - Sistema Acadêmico</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Lista de Cursos</h1>
+
+    <!-- Recipiente onde o JavaScript vai injetar os cartões dos cursos -->
+    <div id="lista-cursos" class="lista-grid"></div>
+
+    <!-- Scripts necessários -->
     <script src="js/dados.js"></script>
     <script src="js/app.js"></script>
-  </body>
+</body>
 </html>
+
+<section>
+    <h2>Cadastrar Novo Curso</h2>
+    <form id="form-curso">
+        <input type="text" id="nome-curso" placeholder="Nome do Curso" required>
+        <input type="text" id="carga-curso" placeholder="Duração / Carga Horária" required>
+        <button type="submit">Adicionar Curso</button>
+    </form>
+</section>
+
+<hr>
+
+<div id="lista-cursos" class="lista-grid"></div>
+
+<script src="js/dados.js"></script>
+<script src="js/app.js"></script>

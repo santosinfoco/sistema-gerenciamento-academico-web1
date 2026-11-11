@@ -1,60 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Dashboard</title>
-</head>
-
-<body>
-  <header>
-    <h1>SISTEMA DE GERENCIAMENTO ACADÊMICO</h1>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="index.html">Dashboard</a></li>
-      <li><a href="alunos.html">Alunos</a></li>
-      <li><a href="cursos.html">Cursos</a></li>
-      <li><a href="matriculas.html">Matrículas</a></li>
-      <li><a href="usuarios.html">Usuários</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section id="Dashboard">
-      <h2>DASHBOARD</h2>
-      <article class="card">
-        <h3>Alunos</h3>
-        <p>245</p>
-      </article>
-      <article class="card">
-        <h3>Cursos</h3>
-        <p>8</p>
-      </article>
-
-      <article class="card">
-        <h3>Matrículas</h3>
-        <p>210</p>
-      </article>
-
-      <article class="card">
-        <h3>Usuários</h3>
-        <p>5</p>
-      </article>
-
-    </section>
-
-    <aside class="aviso">
-      <h2>Avisos</h2>
-      <p>Matrículas abertas até sexta-feira.</p>
-    </aside>
-  </main>
-
-  <footer>
-    <p>© 2026 Sistema de Gerenciamento Acadêmico. Todos os direitos reservados.</p>
-  </footer>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Sistema Acadêmico</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div>
+        <h1 id="titulo-sistema">Sistema de Gerenciamento Acadêmico</h1>
+        <p class="subtitulo">Desenvolvimento Web 1 — Aula 10</p>
+      </div>
+      <span class="area-academica">Área Acadêmica</span>
+    </header>
+    <nav class="navegacao" aria-label="Navegação principal">
+      <ul class="menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a id="link-alunos" href="alunos.html">Alunos</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="matriculas.html">Matrículas</a></li>
+        <li><a href="usuarios.html">Usuários</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="dashboard">
+        <div class="secao-cabecalho">
+          <div>
+            <h2>Dashboard</h2>
+            <p>Indicadores obtidos dos arrays JavaScript.</p>
+          </div>
+          <button type="button" id="btn-atualizar-dashboard">
+            Atualizar indicadores
+          </button>
+        </div>
+        <div class="dashboard-grid">
+          <article class="card">
+            <h3>Alunos</h3>
+            <span class="indicador" id="total-alunos">0</span>
+            <p>Registros cadastrados.</p>
+          </article>
+          <article class="card">
+            <h3>Cursos</h3>
+            <span class="indicador" id="total-cursos">0</span>
+            <p>Cursos cadastrados.</p>
+          </article>
+          <article class="card">
+            <h3>Matrículas</h3>
+            <span class="indicador" id="total-matriculas">0</span>
+            <p>Matrículas cadastradas.</p>
+          </article>
+          <article class="card">
+            <h3>Usuários</h3>
+            <span class="indicador" id="total-usuarios">0</span>
+            <p>Usuários cadastrados.</p>
+          </article>
+        </div>
+        <section class="painel-secundario">
+          <h2>Registros ativos</h2>
+          <div class="lista-resumo">
+            <p>Alunos ativos: <strong id="alunos-ativos">0</strong></p>
+            <p>Cursos ativos: <strong id="cursos-ativos">0</strong></p>
+            <p>Matrículas ativas: <strong id="matriculas-ativas">0</strong></p>
+            <p>Usuários ativos: <strong id="usuarios-ativos">0</strong></p>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="rodape">
+      <p>Sistema de Gerenciamento Acadêmico — Projeto Integrador</p>
+    </footer>
+    <script src="js/dados.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>

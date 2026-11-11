@@ -1,54 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Dashboard</title>
-</head>
-<body>
-  <header>
-    <h1>SISTEMA DE GERENCIAMENTO ACADÊMICO</h1>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="index.html">Dashboard</a></li>
-      <li><a href="alunos.html">Alunos</a></li>
-      <li><a href="cursos.html">Cursos</a></li>
-      <li><a href="matriculas.html">Matriculas</a></li>
-      <li><a href="usuarios.html">Usuários</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section>
-      <h2>Usuários</h2>
-
-      <p>
-        <a class="link-acao" href="usuario-form.html">Novo Usuário</a>
-      </p>
-
-      <article class="card">
-        <h3>Administrador</h3>
-        <p>Perfil: Administrador</p>
-      </article>
-
-      <article class="card">
-        <h3>Secretaria Academica</h3>
-        <p>Perfil: Administrador</p>
-      </article>
-
-      <article class="card">
-        <h3>Usuário Consulta</h3>
-        <p>Perfil: Consulta</p>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Sistema de Gerenciamento Acadêmico. Todos os direitos reservados.</p>
-  </footer>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuários | Sistema Acadêmico</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div>
+        <h1 id="titulo-sistema">Sistema de Gerenciamento Acadêmico</h1>
+        <p class="subtitulo">Desenvolvimento Web 1 — Aula 10</p>
+      </div>
+      <span class="area-academica">Área Acadêmica</span>
+    </header>
+    <nav class="navegacao" aria-label="Navegação principal">
+      <ul class="menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a id="link-alunos" href="alunos.html">Alunos</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="matriculas.html">Matrículas</a></li>
+        <li><a href="usuarios.html">Usuários</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <div class="secao-cabecalho">
+          <div>
+            <h2>Usuários</h2>
+            <p>Lista de usuários criada dinamicamente.</p>
+          </div>
+          <a class="botao-link" href="usuario-form.html">Novo usuário</a>
+        </div>
+        <div id="lista-usuarios" class="lista-grid"></div>
+      </section>
+    </main>
+    <footer class="rodape">
+      <p>Sistema de Gerenciamento Acadêmico — Projeto Integrador</p>
+    </footer>
+    <script src="js/dados.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>

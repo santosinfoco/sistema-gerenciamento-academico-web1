@@ -1,42 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Matrículas - Sistema Acadêmico</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>Lista de Matrículas</h1>
-
-    <!-- Recipiente onde o JavaScript vai injetar os cartões de matrículas -->
-    <div id="lista-matriculas" class="lista-grid"></div>
-
-    <!-- Scripts necessários -->
-    <script src="js/dados.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
-
-
-<section>
-    <h2>Cadastrar Nova Matrícula</h2>
-    <form id="form-matricula">
-        <input type="text" id="aluno-matricula" placeholder="Nome do Aluno" required>
-        <input type="text" id="curso-matricula" placeholder="Nome do Curso" required>
-        <input type="text" id="turno-matricula" placeholder="Turno (ex: Manhã, Noite)" required>
-        <select id="status-matricula">
-            <option value="Ativa">Ativa</option>
-            <option value="Pendente">Pendente</option>
-            <option value="Trancada">Trancada</option>
-        </select>
-        <button type="submit">Adicionar Matrícula</button>
-    </form>
-</section>
-
-<hr>
-
-<div id="lista-matriculas" class="lista-grid"></div>
-
-
-<script src="js/dados.js"></script>
-<script src="js/app.js"></script>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Matrículas - Sistema Acadêmico</title><link rel="stylesheet" href="css/style.css"><script src="js/dados.js" defer></script><script src="js/app.js" defer></script></head>
+<body><header class="cabecalho"><h1 id="titulo-sistema">SISTEMA DE GERENCIAMENTO ACADÊMICO</h1><span>Área Acadêmica</span></header>
+<nav><ul><li><a href="index.html">Dashboard</a></li><li><a href="alunos.html">Alunos</a></li><li><a href="cursos.html">Cursos</a></li><li><a href="matriculas.html">Matrículas</a></li><li><a href="usuarios.html">Usuários</a></li></ul></nav>
+<main><section class="painel"><div class="cabecalho-secao"><div><h2>MATRÍCULAS</h2><p>Registros cadastrados no sistema.</p></div><a class="botao" href="matricula-form.html">+ Nova matrícula</a></div><div id="lista-matriculas" class="lista-grid"></div></section></main>
+<footer><p>© 2026 Sistema de Gerenciamento Acadêmico. Todos os direitos reservados.</p></footer></body></html>

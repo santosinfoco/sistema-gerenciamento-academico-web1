@@ -1,132 +1,39 @@
-// --- 1. DASHBOARD ---
-function atualizarDashboard() {
-    const elAlunos = document.querySelector("#total-alunos");
-    const elCursos = document.querySelector("#total-cursos");
-    const elMatriculas = document.querySelector("#total-matriculas");
-    const elUsuarios = document.querySelector("#total-usuarios");
-
-    if (elAlunos) elAlunos.textContent = alunos.length;
-    if (elCursos) elCursos.textContent = cursosCadastrados.length;
-    if (elMatriculas) elMatriculas.textContent = matriculas.length;
-    if (elUsuarios) elUsuarios.textContent = usuarios.length;
-}
-
-// --- 2. RENDERIZAÇÃO E CARDS DE ALUNOS ---
-function criarCardAluno(aluno) {
-    const cardAluno = document.createElement("article");
-    cardAluno.classList.add("card");
-
-    const nome = document.createElement("h3");
-    nome.textContent = aluno.nome;
-
-    const curso = document.createElement("p");
-    curso.textContent = `Curso: ${aluno.curso}`;
-
-    const status = document.createElement("p");
-    status.textContent = `Status: ${aluno.status}`;
-
-    const btnDetalhes = document.createElement("button");
-    btnDetalhes.textContent = "Ver detalhes";
-    btnDetalhes.addEventListener("click", () => exibirDetalhesAluno(aluno));
-
-    const btnRemover = document.createElement("button");
-    btnRemover.textContent = "Remover";
-    btnRemover.addEventListener("click", () => {
-        const index = alunos.findIndex(a => a.id === aluno.id);
-        if (index !== -1) {
-            alunos.splice(index, 1);
-            aplicarFiltros();
-            atualizarDashboard();
-        }
-    });
-
-    cardAluno.append(nome, curso, status, btnDetalhes, btnRemover);
-    return cardAluno;
-}
-
-function renderizarAlunos(lista) {
-    const listaAlunosElemento = document.querySelector("#lista-alunos");
-    if (!listaAlunosElemento) return;
-
-    listaAlunosElemento.textContent = "";
-
-    for (const aluno of lista) {
-        const card = criarCardAluno(aluno);
-        listaAlunosElemento.append(card);
-    }
-}
-
-// --- 3. CADASTRO DE ALUNOS (Apenas UMA declaração) ---
-const formAluno = document.querySelector("#form-aluno");
-
-if (formAluno) {
-    formAluno.addEventListener("submit", function(evento) {
-        evento.preventDefault();
-
-        const nomeInput = document.querySelector("#nome-aluno").value;
-        const cursoInput = document.querySelector("#curso-aluno").value;
-        const statusInput = document.querySelector("#status-aluno").value;
-
-        const novoAluno = {
-            id: alunos.length + 1,
-            nome: nomeInput,
-            curso: cursoInput,
-            status: statusInput
-        };
-
-        alunos.push(novoAluno);
-        aplicarFiltros();
-        atualizarDashboard();
-        formAluno.reset();
-    });
-}
-
-// --- 4. FILTROS E BUSCA ---
-const campoBusca = document.querySelector("#busca");
-const filtroStatus = document.querySelector("#filtro-status");
-
-function aplicarFiltros() {
-    const termo = campoBusca ? campoBusca.value.toLowerCase() : "";
-    const statusSelecionado = filtroStatus ? filtroStatus.value.toLowerCase() : "";
-
-    const filtrados = alunos.filter((aluno) => {
-        const correspondeNome = aluno.nome.toLowerCase().includes(termo);
-        const correspondeStatus = statusSelecionado === "" || aluno.status.toLowerCase() === statusSelecionado;
-        return correspondeNome && correspondeStatus;
-    });
-
-    const listaAlunosElemento = document.querySelector("#lista-alunos");
-    if (!listaAlunosElemento) return;
-
-    listaAlunosElemento.textContent = "";
-
-    if (filtrados.length === 0) {
-        const mensagem = document.createElement("p");
-        mensagem.textContent = "Nenhum aluno encontrado.";
-        listaAlunosElemento.append(mensagem);
-    } else {
-        renderizarAlunos(filtrados);
-    }
-}
-
-if (campoBusca) campoBusca.addEventListener("input", aplicarFiltros);
-if (filtroStatus) filtroStatus.addEventListener("change", aplicarFiltros);
-
-// --- 5. DETALHES DO ALUNO ---
-function exibirDetalhesAluno(aluno) {
-    const elNome = document.querySelector("#detalhe-nome");
-    const elCurso = document.querySelector("#detalhe-curso");
-    const elStatus = document.querySelector("#detalhe-status");
-
-    if (elNome) elNome.textContent = aluno.nome;
-    if (elCurso) elCurso.textContent = aluno.curso;
-    if (elStatus) elStatus.textContent = aluno.status;
-}
-
-// Inicialização ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-    atualizarDashboard();
-    if (document.querySelector("#lista-alunos")) {
-        renderizarAlunos(alunos);
-    }
-});
+* { box-sizing: border-box; }
+:root { font-family: Arial, Helvetica, sans-serif; color: #243247; background: #f3f6fa; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+.cabecalho { background: #183b63; color: #fff; padding: 22px max(5%, calc((100% - 1100px)/2)); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.cabecalho h1 { margin: 0; font-size: 1.25rem; letter-spacing: .4px; }
+.cabecalho span { color: #d8e7f7; }
+nav { background: #fff; border-bottom: 1px solid #dce4ee; }
+nav ul { max-width: 1100px; margin: auto; padding: 0 20px; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { display: block; padding: 15px 13px; color: #23496f; text-decoration: none; font-weight: 600; }
+nav a:hover, nav a:focus { background: #eaf1f8; border-radius: 6px; }
+main { width: min(1100px, 92%); margin: 32px auto; flex: 1; }
+.painel { background: #fff; border: 1px solid #e0e7ef; border-radius: 12px; padding: 26px; box-shadow: 0 4px 16px rgba(26, 51, 79, .05); }
+h2 { margin-top: 0; color: #183b63; }
+p { line-height: 1.5; }
+.lista-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+.card { background: #fff; border: 1px solid #dce4ee; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(26, 51, 79, .04); }
+.card h3 { margin: 0 0 10px; color: #183b63; }
+.card p { margin: 7px 0; }
+.indicador { display: flex; flex-direction: column; gap: 10px; }
+.indicador strong { font-size: 2.1rem; color: #183b63; }
+.indicador a { color: #1767a8; font-weight: 600; }
+.cabecalho-secao { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.botao, button { display: inline-block; border: 0; border-radius: 7px; padding: 11px 16px; background: #1767a8; color: white; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+button:hover, .botao:hover { filter: brightness(.92); }
+.botao-secundario { background: #e8eef5; color: #23496f; }
+.filtros, .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; align-items: end; margin-top: 18px; }
+label { display: block; font-weight: 600; margin-bottom: 7px; }
+input, select { width: 100%; border: 1px solid #cbd6e2; border-radius: 7px; padding: 11px; font: inherit; background: #fff; color: #243247; }
+input:focus, select:focus { outline: 2px solid #9cc8ed; border-color: #1767a8; }
+.acoes { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 22px; }
+.status { display: inline-block; padding: 4px 9px; border-radius: 20px; background: #e8eef5; font-size: .85rem; }
+.status-ativo { color: #17643a; background: #e4f5eb; font-weight: bold; }
+.status-inativo { color: #6c7480; background: #edf0f3; opacity: .85; }
+.destaque { border: 2px solid currentColor; font-weight: bold; }
+.detalhes { margin-top: 28px; padding: 18px; background: #f5f8fb; border-radius: 9px; }
+.mensagem-vazia { padding: 18px; background: #fff6e5; border: 1px solid #f0d69b; border-radius: 8px; }
+.mensagem-erro { color: #a32626; font-weight: bold; }
+footer { text-align: center; padding: 18px; background: #e8eef5; color: #526477; font-size: .9rem; }
+@media (max-width: 600px) { .cabecalho, .cabecalho-secao { align-items: flex-start; flex-direction: column; } .painel { padding: 18px; } }
